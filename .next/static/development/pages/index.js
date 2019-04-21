@@ -252,11 +252,8 @@ var ReposList = function ReposList(props) {
   function handleScroll(e) {
     // if( e.target.offsetHeight + e.target.scrollTop !== e.target.scrollHeight) return;
     if (e.target.scrollTop >= e.target.scrollHeight - e.target.offsetHeight) {
-      console.log('bottom');
       setPage(page + 1);
       doFetch("https://api.github.com/users/".concat(user, "/repos?sort=updated&type=owner&direction=desc&page=").concat(page, "&per_page=10"));
-      console.log(page);
-      console.log(user);
     }
   }
 
@@ -264,7 +261,7 @@ var ReposList = function ReposList(props) {
     return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Loader__WEBPACK_IMPORTED_MODULE_4__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 38
       },
       __self: this
     });
@@ -273,7 +270,7 @@ var ReposList = function ReposList(props) {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 42
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("ul", {
@@ -281,7 +278,7 @@ var ReposList = function ReposList(props) {
     className: "repoList",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 43
     },
     __self: this
   }, _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(data).map(function (repo) {
@@ -304,14 +301,14 @@ var ReposList = function ReposList(props) {
       forks: forks_count || "0",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 48
       },
       __self: this
     });
   }), isLoading ? react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Loader__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 60
     },
     __self: this
   }) : ""));
@@ -503,19 +500,16 @@ var UserList = function UserList(props) {
 
   function handleScroll() {
     if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight - 10) {
-      console.log('bot');
       setPage(page + 1);
       doFetch("https://api.github.com/search/users?q=language:javascript+type:user&sort=followers&order=desc&page=".concat(page, "&per_page=10"));
     }
   }
 
-  console.log(page);
-
   if (!data) {
     return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Loader__WEBPACK_IMPORTED_MODULE_5__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 29
       },
       __self: this
     });
@@ -524,14 +518,14 @@ var UserList = function UserList(props) {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 33
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("ul", {
     className: "userList",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 34
     },
     __self: this
   }, _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(data).map(function (user) {
@@ -557,14 +551,14 @@ var UserList = function UserList(props) {
       following: following,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 39
       },
       __self: this
     });
   })), isLoading ? react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Loader__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 53
     },
     __self: this
   }) : "");
