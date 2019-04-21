@@ -1,41 +1,42 @@
 import { useState, useEffect } from 'react';
-import Repo from '../components/Repo';
-import Loader from '../components/Loader';
+import Repo from './Repo';
+import Loader from './Loader';
 import useGithubReposFetcher from '../hooks/useGithubReposFetcher';
-import {debounced} from '../helperFuncs';
+import { debounced } from '../helperFuncs';
 
 const ReposList = props => {
-  const {user} =  props;  
+  const { user } = props;
   const [page, setPage] = useState(1);
-  
+
   const { isLoading, data, doFetch } = useGithubReposFetcher(user, page);
-  
 
   useEffect(() => {
-    const debouncedScroll = debounced(600,handleScroll);
+    const debouncedScroll = debounced(600, handleScroll);
 
     function getUserParentScroll(user) {
-     const ourUser =  document.getElementById(user);
-      if(ourUser){
-       ourUser.parentNode.addEventListener('scroll', debouncedScroll);
+      const ourUser = document.getElementById(user);
+      if (ourUser) {
+        ourUser.parentNode.addEventListener('scroll', debouncedScroll);
       }
     }
 
-   getUserParentScroll(user);
+    getUserParentScroll(user);
     return () => document.getElementById(user).parentNode.removeEventListener('scroll', debouncedScroll);
-  }, [handleScroll]);
+  }, [handleScroll, user]);
 
   function handleScroll(e) {
-    //if( e.target.offsetHeight + e.target.scrollTop !== e.target.scrollHeight) return;
-    if (e.target.scrollTop >= (e.target.scrollHeight - e.target.offsetHeight)){
-    console.log('bottom');
-    setPage(page + 1);
-    doFetch(`https://api.github.com/users/${user}/repos?sort=updated&type=owner&direction=desc&page=${page}&per_page=10`);
-    console.log(page);
-    console.log(user);
+    // if( e.target.offsetHeight + e.target.scrollTop !== e.target.scrollHeight) return;
+    if (e.target.scrollTop >= e.target.scrollHeight - e.target.offsetHeight) {
+      console.log('bottom');
+      setPage(page + 1);
+      doFetch(
+        `https://api.github.com/users/${user}/repos?sort=updated&type=owner&direction=desc&page=${page}&per_page=10`
+      );
+      console.log(page);
+      console.log(user);
     }
   }
-    
+
   if (!data) {
     return <Loader />;
   }
@@ -59,10 +60,10 @@ const ReposList = props => {
             />
           );
         })}
-        {isLoading ? <Loader/> : ``}  
+        {isLoading ? <Loader /> : ``}
       </ul>
-      </React.Fragment>
+    </React.Fragment>
   );
-}
+};
 
 export default ReposList;

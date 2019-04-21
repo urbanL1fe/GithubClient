@@ -157,6 +157,12 @@ h3 {
       align-self: center; }
   .repoItem {
     padding: 20px; }
+    .repoItem h3 {
+      font-size: 20px;
+      overflow-wrap: break-word; }
+    .repoItem .description {
+      font-size: 16px;
+      overflow-wrap: break-word; }
   .starsWatchersForks {
     flex-direction: column; } }
 
