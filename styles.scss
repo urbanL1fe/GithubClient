@@ -1,0 +1,236 @@
+$font-stack: 'Merriweather','Georgia',serif;
+$dark-grey: #5b5b5b;
+$light-grey: #909090;
+$background-color :#d3cce3;
+$white: #fff;
+$pink: #d23669; 
+
+* {
+	box-sizing: border-box;   
+}
+
+html,body{
+	margin:0;
+	background: $background-color
+}
+
+h3{
+	font-size: 22px;
+	color: $pink;
+}
+
+#main{
+	margin:0;
+	padding:20px 0 0 0;
+	font-family: $font-stack;
+	font-size: 16px;
+	color: $light-grey;
+}
+
+/*index*/
+.userList{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+
+		a:link, a:visited{
+			text-decoration: none;
+			color:$light-grey;
+		}
+}
+
+.userListItem {
+
+	display: flex;
+	cursor:pointer;
+	width: 900px;
+	background-color: $white;
+	box-shadow: 0px 15px 25px rgba(55,55,55,0.1), -5px 2px 55px rgba(55,55,55,0.1);
+	border-radius: 10px;
+	margin: 10px 0 10px 0;
+	padding:0px 40px 20px 0px;
+	
+
+	img {
+		width: 150px;
+		height: 148px;
+		border-top-left-radius: 10px;
+	}
+	
+	a{
+		text-decoration:none;
+	}
+
+}
+
+.userListInfo {
+
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 5%;
+
+	h3 {
+		align-self: center;	
+	}
+
+	}
+
+.wrapperRepoFollow{
+	display: flex;
+}
+
+.reposGists, .followingFollowers {
+	
+	display: flex;
+	
+	p {
+		padding: 0 15px 0 0;
+	}
+
+	}
+
+/*modal*/	
+.repoList{
+    display: flex;
+	flex-direction: column;
+	align-items:center;
+	list-style-type: none;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+	
+.repoItem {
+	display: flex;
+	flex-direction: column;
+	padding:20px 40px 20px 40px;
+	width: 60vw;
+	background-color: $white;
+	box-shadow: 0px 15px 25px rgba(55,55,55,0.1), -5px 2px 55px rgba(55,55,55,0.1);
+	border-radius: 10px;
+	margin: 10px 0 10px 0;
+
+	.description{
+		font-size: 18px;
+		font-style: bold;
+		color: $dark-grey;
+
+	}
+}
+
+.starsWatchersForks{
+	display:flex;
+	
+	p {
+		padding: 0 15px 0 0;
+	}
+}
+
+
+/*Loader*/
+.spinner {
+	margin: 50px auto 0;
+	width: 70px;
+	text-align: center;
+  }
+  
+  .spinner > div {
+	width: 18px;
+	height: 18px;
+	background-color: $dark-grey;
+  
+	border-radius: 100%;
+	display: inline-block;
+	-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+	animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  }
+  
+  .spinner .bounce1 {
+	-webkit-animation-delay: -0.32s;
+	animation-delay: -0.32s;
+  }
+  
+  .spinner .bounce2 {
+	-webkit-animation-delay: -0.16s;
+	animation-delay: -0.16s;
+  }
+  
+  @-webkit-keyframes sk-bouncedelay {
+	0%, 80%, 100% { -webkit-transform: scale(0) }
+	40% { -webkit-transform: scale(1.0) }
+  }
+  
+  @keyframes sk-bouncedelay {
+	0%, 80%, 100% { 
+	  -webkit-transform: scale(0);
+	  transform: scale(0);
+	} 40% { 
+	  -webkit-transform: scale(1.0);
+	  transform: scale(1.0);
+	}
+	}
+	
+/*---1048----*/
+@media screen and (max-width: 1048px){
+	
+	.userListItem {
+		width:80vw;
+	}
+
+	.repoItem {
+		width:70vw;
+	}
+
+}
+
+/*----768px----*/
+@media screen and (max-width: 768px){
+
+	.userListItem {
+		width:90vw;
+	}
+
+	.wrapperRepoFollow{
+		flex-direction: column;
+	}
+}
+
+/*----550px----*/
+@media screen and (max-width: 550px){
+	
+	.reposGists, .followingFollowers {
+		flex-direction:column;
+	}
+
+	.repoItem{
+		width:70vw;
+	}
+
+}
+
+/*----450px----*/
+@media screen and (max-width: 450px){
+	
+	.userListItem{
+		flex-direction:column;
+		padding-right:0;
+
+		img {		
+			border-top-left-radius: 0px;
+			align-self: center;
+		}
+	}
+
+	.repoItem{
+		padding: 20px;
+	}
+
+	.starsWatchersForks{
+		flex-direction:column;
+	}
+
+}
