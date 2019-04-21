@@ -27,13 +27,10 @@ const ReposList = props => {
   function handleScroll(e) {
     // if( e.target.offsetHeight + e.target.scrollTop !== e.target.scrollHeight) return;
     if (e.target.scrollTop >= e.target.scrollHeight - e.target.offsetHeight) {
-      console.log('bottom');
       setPage(page + 1);
       doFetch(
         `https://api.github.com/users/${user}/repos?sort=updated&type=owner&direction=desc&page=${page}&per_page=10`
       );
-      console.log(page);
-      console.log(user);
     }
   }
 

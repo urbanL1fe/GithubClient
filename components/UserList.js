@@ -17,16 +17,14 @@ const UserList = props => {
   }, [handleScroll]);
 
   function handleScroll() {
-    if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight - 10){
-    console.log('bot');
-    setPage(page + 1);
-    doFetch(
-      `https://api.github.com/search/users?q=language:javascript+type:user&sort=followers&order=desc&page=${page}&per_page=10`
-    );
-  }
+    if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight - 10) {
+      setPage(page + 1);
+      doFetch(
+        `https://api.github.com/search/users?q=language:javascript+type:user&sort=followers&order=desc&page=${page}&per_page=10`
+      );
+    }
   }
 
-  console.log(page);
   if (!data) {
     return <Loader />;
   }
