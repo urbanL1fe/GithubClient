@@ -1,5 +1,5 @@
 import Popup from 'reactjs-popup';
-import ReposList from './Reposlist';
+import ReposList from './ReposList';
 
 const User = props => (
   <Popup

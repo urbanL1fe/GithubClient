@@ -191,9 +191,9 @@ var Repo = function Repo(props) {
 
 /***/ }),
 
-/***/ "./components/Reposlist.js":
+/***/ "./components/ReposList.js":
 /*!*********************************!*\
-  !*** ./components/Reposlist.js ***!
+  !*** ./components/ReposList.js ***!
   \*********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -211,7 +211,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helperFuncs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../helperFuncs */ "./helperFuncs.js");
 
 
-var _jsxFileName = "C:\\Users\\User\\Desktop\\GithubClient-master\\GithubClient-master\\components\\Reposlist.js";
+var _jsxFileName = "C:\\Users\\User\\Desktop\\GithubClient-master\\GithubClient-master\\components\\ReposList.js";
 
 
 
@@ -333,7 +333,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var reactjs_popup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactjs-popup */ "./node_modules/reactjs-popup/reactjs-popup.es.js");
-/* harmony import */ var _Reposlist__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Reposlist */ "./components/Reposlist.js");
+/* harmony import */ var _ReposList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ReposList */ "./components/ReposList.js");
 var _jsxFileName = "C:\\Users\\User\\Desktop\\GithubClient-master\\GithubClient-master\\components\\User.js";
 
 
@@ -440,7 +440,7 @@ var User = function User(props) {
       lineNumber: 5
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reposlist__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ReposList__WEBPACK_IMPORTED_MODULE_2__["default"], {
     user: props.login,
     __source: {
       fileName: _jsxFileName,
